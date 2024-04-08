@@ -147,7 +147,7 @@ function SignupForm() {
                   value={formData.nameTitleTha}
                   required=""
                 >
-                  <option value="นาย">เลือกคำนำหน้า</option>
+                  
                   <option value="นาย">นาย</option>
                   <option value="นาง">นาง</option>
                   <option value="นางสาว">นางสาว</option>
@@ -202,7 +202,7 @@ function SignupForm() {
                   value={formData.nameTitleEng}
                   required=""
                 >
-                  <option value="Mr.">Select a Title</option>
+                 
                   <option value="Mr.">Mr.</option>
                   <option value="Mrs.">Mrs.</option>
                   <option value="Ms.">Ms.</option>
