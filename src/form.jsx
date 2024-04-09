@@ -42,9 +42,22 @@ function SignupForm() {
     } else {
       setFormData({ ...formData, [name]: value });
     }
-
+    
+    // เพิ่มเงื่อนไขตรวจสอบภาษาที่ใช้ในการกรอกข้อมูล
+  if (name.includes("Tha") && !value.match(/^[\u0E01-\u0E5B]+$/)) {
+    setErrors({
+      ...errors,
+      [`${name}Error`]: "กรุณากรอกข้อมูลเป็นภาษาไทยเท่านั้น",
+    });
+  } else if (name.includes("Eng") && !value.match(/^[A-Za-z\s]+$/)) {
+    setErrors({
+      ...errors,
+      [`${name}Error`]: "กรุณากรอกข้อมูลเป็นภาษาอังกฤษเท่านั้น",
+    });
+  } else {
     validateForm(name, value); // เรียกฟังก์ชัน validateForm เพื่อตรวจสอบข้อมูล
-  };
+  }
+};
 
   const validateForm = (fieldName, value) => {
     let newErrors = { ...errors };
